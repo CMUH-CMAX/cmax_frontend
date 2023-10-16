@@ -1,4 +1,4 @@
 
 <footer>
-  <p>Footer</p>
+  <p class="i18n">Footer</p>
 </footer>

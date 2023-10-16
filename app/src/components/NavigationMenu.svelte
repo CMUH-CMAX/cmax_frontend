@@ -25,8 +25,10 @@
     --menu-height: 5em;
   }
   #main-navigation {
-
 		border-top: 1px solid #DBD6D1;
+
+		/* border: 1px solid #DBD6D1;
+    border-style: solid solid none solid; */
 		width: 100%;
 		background: var(--white-f);
   }
@@ -68,7 +70,7 @@
         <div class="navbar-icon">
           <Home variation="solid" size="32" />
         </div>
-        <span class="text-xs">首頁</span>
+        <span class="text-xs i18n">首頁</span>
       </a>
     </li>
     <li class="relative flex justify-center items-center text-center w-4/12" aria-current={$page.url.pathname === '/search' ? 'page' : undefined}>
@@ -76,7 +78,7 @@
         <div class="navbar-icon">
           <MagnifyingGlass variation="solid" size="32" />
         </div>
-        <span class="text-xs">搜尋</span>
+        <span class="text-xs i18n">搜尋</span>
       </a>
     </li>
     <li class="relative flex justify-center items-center text-center w-4/12" aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
@@ -84,7 +86,7 @@
         <div class="navbar-icon">
           <User variation="outline" size="32" />
         </div>
-        <span class="text-xs">我的</span>
+        <span class="text-xs i18n">我的</span>
       </a>
     </li>
   </ul>

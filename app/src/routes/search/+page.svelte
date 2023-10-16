@@ -1,14 +1,17 @@
 <script>
 	import NavigationBar from '../../components/NavigationMenu.svelte'
-	import Search from '../../components/Search.svelte';
+	import SearchBar from '../../components/Search.svelte'
 </script>
 <svelte:head>
-	<title>About</title>
+	<title>Search</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
 <div class="container w-96 flex flex-col min-h-screen">
-	<Search />
+	<SearchBar />
 	<div class="p-3">
-		<p class="i18n">Hello</p>
+		<p class="i18n">Search Page</p>
+	</div>
+	<div class="mt-auto">
+		<NavigationBar />
 	</div>
 </div>
