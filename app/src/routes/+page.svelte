@@ -1,14 +1,68 @@
 <script>
-	import NavigationBar from '../components/NavigationMenu.svelte';
+	import BellItem from '../components/BellItem.svelte';
+	import Navigation from '../components/NavigationMenu.svelte';
+	import Service from '../components/Service.svelte';
+	import WellDesignSearchBtn from '../components/WellDesignSearchBtn.svelte';
+	import SymptomsRanking from '../components/SymptomsRanking.svelte';
+
+	import Mascots from '../components/Mascots.svelte';
+
+	import mountainSvg from '$lib/assets/mountain.svg';
+	let lastname = '書僑';
 </script>
 <svelte:head>
 	<title>Home</title>
 </svelte:head>
-<div class="container w-96 flex flex-col min-h-screen">
-	<div class="p-3">
-		<p class="i18n">Home Page</p>
+<style>
+	#home {
+		background: url('/Stars.svg'), var(--linear-x21);
+		/* background: var(--linear-x21); */
+	}
+</style>
+<div id="home" class="relative w-screen flex flex-col min-h-screen">
+	<div class="w-full mx-auto grid grid-cols-4 gap-4 content-around p-5">
+		<div class="col-span-3 text-white">
+			<p class="text-xs">Hi，<span class="lastname font-semibold i18n">{lastname}</span>！</p>
+			<p class="text-base i18n">今天過得好嗎？</p>
+		</div>
+		<div class="flex justify-end">
+			<div class="notification">
+				<a href="/notification">
+					<BellItem />
+				</a>
+			</div>
+		</div>
+		<div class="col-span-4">
+			<a href="/search">
+				<WellDesignSearchBtn />
+			</a>
+		</div>
 	</div>
-	<div class="mt-auto">
-		<NavigationBar />
+	
+	<Mascots />
+
+	<div class="grid mx-5">
+		<div class="grid grid-cols-4 gap-4 pb-2 text-white text-base">
+			<p class="col-span-3 gap-4 pb-2">最近常見症狀</p>
+			<p class="text-end">
+				<a href="/recent">
+					查看更多
+				</a>
+			</p>
+		</div>
+		<SymptomsRanking />
+	</div>
+	
+	<div class="service-slot mx-5">
+  	<span class="text-white drop-shadow-xl">服務</span>
+		<Service />
+	</div>
+
+	<div class="p-5 gap"></div>
+	
+	<img class="mountainSvg" src={mountainSvg} alt="The mountain" disbled draggable="false"/>
+
+	<div class="mt-auto fixed inset-x-0 bottom-0">
+		<Navigation />
 	</div>
 </div>

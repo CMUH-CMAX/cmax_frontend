@@ -4,10 +4,10 @@
     import { page } from '$app/stores';
 
     const gotoPreviousPage = () => {
-      history.back();
+
     }
     const gotoHomePage = () => {
-      goto($page.url.pathname.substring(0, $page.url.pathname.lastIndexOf('/')));
+      location.href = '/'
     }
 
 </script>

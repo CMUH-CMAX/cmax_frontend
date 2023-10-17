@@ -23,12 +23,20 @@
   --red-3: #F09EA3;
   --red-4: #CE575E;
 
+  --gold-1: #F2D791;
+  --gold-2: #E7B22C;
+
   --radial-1: radial-gradient(50% 50% at 50% 50%, #388E8E 0%, #236A6A 99.99%, #1A5B5B 100%);
 	
 	--linear-1: linear-gradient(225deg, var(--blue-4) 0%, var(--blue-5) 100%);
 	--linear-2: linear-gradient(142deg, var(--blue-2) 9.39%, var(--blue-3) 57.6%);
 	--linear-gold: linear-gradient(205.68deg, var(--gold-1) 2.38%, var(--gold-2) 95.92%);
+  /* I need a code for this linear gradient */
 	--linear-x21: linear-gradient(180deg, var(--blue-4) 5.39%, var(--blue-5) 73.52%);
+  
+	--white-75p: #FFFFFFBF;
+	--white-50p: #FFFFFF80;
+	--white-25p: #FFFFFF40;
 }
 
 * {
