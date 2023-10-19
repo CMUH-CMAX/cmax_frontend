@@ -1,7 +1,7 @@
 <script>
 	import BellItem from '../components/BellItem.svelte';
 	import Navigation from '../components/NavigationMenu.svelte';
-	import Service from '../components/Service.svelte';
+	import ServiceProvide from '../components/ServiceProvide.svelte';
 	import WellDesignSearchBtn from '../components/WellDesignSearchBtn.svelte';
 	import SymptomsRanking from '../components/SymptomsRanking.svelte';
 
@@ -13,12 +13,7 @@
 <svelte:head>
 	<title>Home</title>
 </svelte:head>
-<style>
-	#home {
-		background: url('/Stars.svg'), var(--linear-x21);
-		/* background: var(--linear-x21); */
-	}
-</style>
+<style>#home{background: url('/Stars.svg'), var(--linear-x21);}</style>
 <div id="home" class="relative w-screen flex flex-col min-h-screen">
 	<div class="w-full mx-auto grid grid-cols-4 gap-4 content-around p-5 z-10">
 		<div class="col-span-3 text-white">
@@ -55,7 +50,7 @@
 	
 	<div class="service-slot mx-5 z-10">
   	<span class="text-white drop-shadow-xl">服務</span>
-		<Service />
+		<ServiceProvide />
 	</div>
 	<div class="p-5 gap"></div>
 	<img class="mountainSvg absolute w-screen inset-x-0 bottom-0" src={mountainSvg} alt="The mountain" disbled draggable="false"/>

@@ -6,7 +6,7 @@
 	<title>About</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
-<div class="container w-96 flex flex-col min-h-screen">
+<div class="relative w-screen flex flex-col min-h-screen">
 	<Search />
 	<div class="p-3">
 		<p class="i18n">Hello</p>
