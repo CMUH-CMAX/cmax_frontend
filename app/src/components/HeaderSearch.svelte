@@ -4,6 +4,7 @@
     import { page } from '$app/stores';
 
     export let return_btn = true;
+    export let search_hint = "搜尋";
     const gotoPreviousPage = () => {
 
     }
@@ -24,7 +25,7 @@
       <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
         <MagnifyingGlass size="20"/>
       </div>
-      <input type="search" id="default-search" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-full placeholder:text-xs" placeholder="搜尋醫院與醫生" required>
+      <input type="search" id="default-search" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-full placeholder:text-xs" placeholder="{search_hint}" required>
   </div>
   <!-- svelte-ignore a11y-no-static-element-interactions -->
   <!-- svelte-ignore a11y-click-events-have-key-events -->

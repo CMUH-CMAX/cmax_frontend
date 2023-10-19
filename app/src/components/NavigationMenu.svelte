@@ -1,7 +1,7 @@
 <script>
   	import { page } from '$app/stores';
     import { Home, MagnifyingGlass, User } from 'svelte-heros-v2';
-    export let zIndex = "";
+    export const zIndex = "";
     let menuItems = [
       {
         name: '首頁',

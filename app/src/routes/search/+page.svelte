@@ -10,10 +10,12 @@
 	<meta name="description" content="About this app" />
 </svelte:head>
 <style>
-	.XMark {}
+	/* .XMark {} */
 </style>
 <div class="relative w-screen flex flex-col min-h-screen">
-	<HeaderSearch return_btn={false} />
+	
+	<HeaderSearch return_btn={false} search_hint="搜尋醫院與醫生"/>
+
 	<div class="grid grid-cols-2 place-items-center my-10">
 		<div class="">
 			<Squares2x2 class="mx-auto mb-1/2" size="32" color="#9AD0D0"/>
