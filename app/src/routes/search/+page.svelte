@@ -1,7 +1,8 @@
 <script>
 	import { FaceSmile, Squares2x2, XMark } from 'svelte-heros-v2';
 	import NavigationBar from '../../components/NavigationMenu.svelte'
-	import HeaderSearch from '../../components/HeaderSearch.svelte'
+	// import HeaderSearch from '../../components/HeaderSearch.svelte'
+	import HeaderNavigator from '../../components/HeaderNavigator.svelte';
 
 	let searchHistory = ['仁仁', '杏儒','行德', '許鴻安', '塵瞧舒', '王安石']
 </script>
@@ -14,7 +15,7 @@
 </style>
 <div class="relative w-screen flex flex-col min-h-screen">
 	
-	<HeaderSearch return_btn={false} search_hint="搜尋醫院與醫生"/>
+	<HeaderNavigator mainTitle="我的"/>
 
 	<div class="grid grid-cols-2 place-items-center my-10">
 		<div class="">
