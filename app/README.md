@@ -1,21 +1,38 @@
-<div align="center">
-  <img src="./app/static/favicon.png" width="128">
-  <h1 style="border-bottom: none;">
-    <b><a href="#">CMAX</a></b> <br>
-    <p>你我都信賴的中醫地圖 APP</p>
-  </h1>
-</div>
+# create-svelte
 
-<p>中醫地圖 CMAX 是一個線上中醫診所地圖，旨在幫助大眾透過演算法尋找合適的中醫診所，希望在中醫分科前就為民眾提供一個簡單快速的分科 APP。</p>
-<p>CMAX 利用獨特的演算法就能將您的症狀分科並推薦至附近的診所或醫院。</p>
-<div align="center">
-  <img width="612" alt="App Screenshot" src="">
-</div>
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+
+## Creating a project
+
+If you're seeing this, you've probably already done this step. Congrats!
+
+```bash
+# create a new project in the current directory
+npm create svelte@latest
+
+# create a new project in my-app
+npm create svelte@latest my-app
+```
+
+## Developing
+
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
 ## Building
 
-See [BUILDING.md](./docs/BUILDING.md) for instructions on how to build CMAX.
+To create a production version of your app:
 
-## Other Documentations
+```bash
+npm run build
+```
 
-[docs](./docs)
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
