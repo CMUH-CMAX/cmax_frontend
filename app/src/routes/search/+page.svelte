@@ -1,8 +1,7 @@
 <script>
 	import { FaceSmile, Squares2x2, XMark } from 'svelte-heros-v2';
 	import NavigationBar from '../../components/NavigationMenu.svelte'
-	// import HeaderSearch from '../../components/HeaderSearch.svelte'
-	import HeaderNavigator from '../../components/HeaderNavigator.svelte';
+	import HeaderSearch from '../../components/HeaderSearch.svelte'
 
 	let searchHistory = ['仁仁', '杏儒','行德', '許鴻安', '塵瞧舒', '王安石']
 </script>
@@ -15,17 +14,21 @@
 </style>
 <div class="relative w-screen flex flex-col min-h-screen">
 	
-	<HeaderNavigator mainTitle="我的"/>
+	<HeaderSearch return_btn={false} search_hint="搜尋醫院與醫生"/>
 
-	<div class="grid grid-cols-2 place-items-center my-10">
-		<div class="">
-			<Squares2x2 class="mx-auto mb-1/2" size="32" color="#9AD0D0"/>
-			<span class="text-xs">依症狀分類搜尋</span>
-		</div>
-		<div>
-			<FaceSmile class="mx-auto mb-1/2" size="32" color="#9AD0D0"/>
-			<span class="text-xs">依身體部位搜尋</span>
-		</div>
+	<div class="grid grid-cols-2 place-items-center">
+		<a href="/search/categorys">
+			<div class="py-8">
+				<Squares2x2 class="mx-auto mb-1/2" size="32" color="#9AD0D0"/>
+				<span class="text-xs">依症狀分類搜尋</span>
+			</div>
+		</a>
+		<a href="/search/body">
+			<div class="py-8">
+				<FaceSmile class="mx-auto mb-1/2" size="32" color="#9AD0D0"/>
+				<span class="text-xs">依身體部位搜尋</span>
+			</div>
+		</a>
 	</div>
 
 	<hr class="p-2">
