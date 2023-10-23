@@ -10,7 +10,7 @@
 	<meta name="description" content="About this app" />
 </svelte:head>
 <div class="relative w-screen flex flex-col min-h-screen">
-	<HeaderNavigator mainTitle="我的" themeColor="white"/>
+	<HeaderNavigator mainTitle="我的" themeColor="default"/>
 	<div class="grid grid-cols-2 p-5 relative">
 		<div>
 			<p class="i18n text-lg">{lastname}</p>
