@@ -1,5 +1,4 @@
 <script>
-  import { ChevronLeft } from 'svelte-heros-v2';
 	import HeaderNavigator from '../../components/HeaderNavigator.svelte';
   let bulletin_type_translate = {
     'info': 'blue',
@@ -31,6 +30,7 @@
 </script>
 <svelte:head>
   <meta name="theme-color" id="theme-color" content="#1A5B5B">
+  <title>通知</title>
 </svelte:head>
 
 <div>

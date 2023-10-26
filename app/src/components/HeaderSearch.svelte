@@ -6,7 +6,7 @@
     export let return_btn = true;
     export let search_hint = "搜尋";
     const gotoPreviousPage = () => {
-
+      location.href = '/'
     }
     const gotoHomePage = () => {
       location.href = '/'

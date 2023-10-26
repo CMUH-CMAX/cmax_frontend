@@ -11,7 +11,7 @@
 	let lastname = '書僑';
 </script>
 <svelte:head>
-	<title>Home</title>
+	<title>首頁</title>
 </svelte:head>
 <style>#home{background: url('/Stars.svg'), var(--linear-x21);}</style>
 <div id="home" class="relative w-screen flex flex-col min-h-screen">

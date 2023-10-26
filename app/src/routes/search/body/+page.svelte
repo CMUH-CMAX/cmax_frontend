@@ -1,7 +1,7 @@
 <script>
 </script>
 <svelte:head>
-	<title>堅果好吃</title>
+	<title>杏仁小魚好吃</title>
 	<meta name="description" content="Notification" />
 </svelte:head>
 <div class="relative w-screen flex flex-col min-h-screen grid place-items-center">
