@@ -30,15 +30,28 @@
 	.app {
 		background: var(--gray-1);
 	}
+
+	/* .item:nth-child(3n-2){
+		@apply pr-2;
+	}
+	.item:nth-child(3n-3){
+		@apply pl-2;
+	}
+	.item:nth-child(3n-1){
+		@apply px-1;
+	} */
 </style>
 <div class="relative w-screen flex flex-col min-h-screen">
 	
 	<HeaderSearch return_btn={false} search_hint="搜尋醫院與醫生"/>
 
 	<p class="ml-6 mt-6">症狀分類</p>
-	<div class="grid grid-cols-2 justify-items-center items-center mx-6">
+	<div class="grid justify-items-center items-center mx-6
+						  xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 ld:grid-cols-5 xl:grid-cols-6">
 		{#each symptom_list as symptom }
-		<div class="item w-full h-16 py-2 odd:pr-2 even:pl-2">
+		<div class="item w-full h-16 py-2 sm:odd:pr-2 sm:even:pl-2
+																			md:odd:p-0 md:even:p-0 
+																			">
 			<ItemBlock text="{symptom['text']}" img="{symptom['link']}" />
 		</div>
 		{/each}
