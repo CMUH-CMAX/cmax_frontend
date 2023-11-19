@@ -40,12 +40,14 @@
 		</div>
 
 		{#each searchHistory as name}
-		<div class="container grid grid-cols-2 pb-4">
-			<span class="text-start text-sm">{name}</span>
-			<div class="grid justify-end">
-				<XMark class="XMark" size="16" color="#BAB6B2"/>
+		<a href="/search/result?name={encodeURIComponent(name)}">
+			<div class="container grid grid-cols-2 pb-4">
+				<span class="text-start text-sm">{name}</span>
+				<div class="grid justify-end">
+					<XMark class="XMark" size="16" color="#BAB6B2"/>
+				</div>
 			</div>
-		</div>
+		</a>
 		{/each}
 	</div>
 

@@ -52,7 +52,9 @@
 		<div class="item w-full h-16 py-2 sm:odd:pr-2 sm:even:pl-2
 																			md:odd:p-0 md:even:p-0 
 																			">
-			<ItemBlock text="{symptom['text']}" img="{symptom['link']}" />
+			<a href="/search/result">
+				<ItemBlock text="{symptom['text']}" img="{symptom['link']}" />
+			</a>
 		</div>
 		{/each}
 	</div>

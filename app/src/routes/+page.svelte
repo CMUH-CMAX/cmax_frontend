@@ -53,7 +53,7 @@
 		<ServiceProvide />
 	</div>
 	<div class="p-5 gap"></div>
-	<img class="mountainSvg absolute w-screen inset-x-0 bottom-0" src={mountainSvg} alt="The mountain" disbled draggable="false"/>
+	<img class="mountainSvg absolute w-screen inset-x-0 bottom-0" src={mountainSvg} alt="The mountain" disabled draggable="false"/>
 	<div class="mt-auto fixed inset-x-0 bottom-0 z-20">
 		<Navigation />
 	</div>
