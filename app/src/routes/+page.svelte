@@ -1,10 +1,10 @@
 <script>
-	import MainPageLogo from '../components/MainPageLogo.svelte';
-	import RecentSymptoms from '../components/RecentSymptoms.svelte';
-	import NotificationBtn from '../components/NotificationButton.svelte';
-	import ProvidedServices from '../components/ProvidedServices.svelte';
-	import Navigation from '../components/Navigation.svelte';
-	import SearchBar from '../components/SearchBar.svelte';
+	import MainPageLogo from '$components/MainPageLogo.svelte';
+	import RecentSymptoms from '$components/RecentSymptoms.svelte';
+	import NotificationBtn from '$components/NotificationButton.svelte';
+	import ProvidedServices from '$components/ProvidedServices.svelte';
+	import Navigation from '$components/Navigation.svelte';
+	import SearchBar from '$components/SearchBar.svelte';
 	
 </script>
 
@@ -33,8 +33,6 @@
 		<MainPageLogo />
 		<RecentSymptoms />
 		<ProvidedServices />
-		<div class="w-full fixed inset-x-0 bottom-0 flex justify-around bg-white">
-			<Navigation />
-		</div>
 	</main>
+	<Navigation />
 </div>

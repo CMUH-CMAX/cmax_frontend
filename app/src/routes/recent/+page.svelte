@@ -1,6 +1,6 @@
 <script>
   import { ChevronLeft, Eye } from 'svelte-heros-v2';
-	import HeaderNavigator from '../../components/HeaderNavigator.svelte';
+	import HeaderNavigator from '$components/gadgets/HeaderNavigator.svelte';
   let recent_symptoms = [
     {
       name: '發燒',
@@ -78,7 +78,7 @@
 	.symptoms-card {
 		transition-duration: 0.1s;
 		cursor: pointer;
-		background: var(--white-75p);
+		background-color: var(--white-75p);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05), 0px 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
     
@@ -114,13 +114,13 @@
 		transform: translate(-120%, -120%) scale(1.2);
 	}
 </style>
-<div class="relative w-screen flex flex-col min-h-screen">
+<main class="relative w-screen flex flex-col min-h-screen">
 	<HeaderNavigator mainTitle="近期常見症狀" />
   
   <div class="p-5">
 
     {#each recent_symptoms as symptom, i}
-    <div class="symptoms-card flex col-span rounded px-5 py-3.5 text-sm border shadow" data-rank="{i+1}">
+    <section class="symptoms-card flex col-span rounded px-5 py-3.5 text-sm border shadow" data-rank="{i+1}">
       <div class="flex justify-start">
         <span class="pr-1">
           {symptom.name}
@@ -133,7 +133,7 @@
         </div>
         <span>{symptom.visit}</span>
       </div>
-    </div>
+    </section>
     {/each}
 
   </div>
@@ -142,4 +142,4 @@
     <span>最後更新時間: {new Date().toISOString().replace(/T|Z/g, ' ')}</span>
   </div>
 
-</div>
+</main>
