@@ -1,9 +1,7 @@
 <script>
-	import HeaderNavigator from '../../components/HeaderNavigator.svelte';
-  let bulletin_type_translate = {
-    'info': 'blue',
-    'warning': 'red',
-  }
+	import HeaderNavigator from '$components/gadgets/HeaderNavigator.svelte';
+	import { twMerge } from '$lib/helper';
+
   let bulletins = [
     {
       type: 'info',
@@ -34,65 +32,40 @@
 </svelte:head>
 
 <div>
-	<HeaderNavigator mainTitle="通知" featureTitle="全部已讀" />
-
-  <div class="grid">
+	<header>
+    <HeaderNavigator mainTitle="通知" featureTitle="全部已讀" />
+  </header>
+  <main class="grid">
     <!-- for each bulletin -->
     {#each bulletins as bulletin}
-    <div class="notify-card p-5 border-b cursor-pointer">
+    <section class="hover:bg-tap p-5 border-b cursor-pointer">
 
       <div class="flex mb-1">
-        <div class="bulletin-{bulletin_type_translate[bulletin.type] || "undefined"} text-white text-sm py-1 px-1.5 rounded-lg">
+        <div class={twMerge("bg-bulletin text-white text-sm py-1 px-1.5 rounded-lg"
+        ,
+        {
+          "bg-bulletin-info": bulletin["type"] === 'info',
+          "bg-bulletin-warning": bulletin["type"] === 'warning',
+        })}
+        >
           {bulletin.class}
         </div>
       </div>
-      <p class="primary text-base">{bulletin.content}</p>
-      <p class="secondary text-sm text-gray">
+      <p class="text-main text-base">{bulletin.content}</p>
+      <p class="text-silent text-sm text-gray">
         <span>{bulletin.date}</span>
         <span>・</span>
         <span>{bulletin.note}</span>
       </p>
-    </div>
+    </section>
     {/each}
-  </div>
+  </main>
 
-  <div class="last-updated text-center text-xs p-5">
+  <footer class="text-silent text-center text-xs p-5">
     <span>最後更新時間: {new Date().toISOString().replace(/T|Z/g, ' ')}</span>
-  </div>
-
+  </footer>  
 </div>
 
 <style>
-  .headerbar {
-    background: var(--blue-5);
-  }
-  .headerbar > .readed:hover {
-    color: var(--blue-1);
-  }
-  .headerbar > .readed:active {
-    color: var(--blue-2);
-  }
-  .notify-card:hover {
-    background: var(--blue-1);
-  }
-  .bulletin-blue {
-    background: var(--blue-4);
-  }
-  .bulletin-red {
-    background: var(--red-4);
-  }
-  .bulletin-undefined {
-    background: var(--gray-4);
-  }
-
-  .primary {
-    color: var(--black-0);
-  }
-  .secondary {
-    color: var(--gray-4);
-  }
-  .last-updated {
-    color: var(--gray-4);
-  }
 
 </style>

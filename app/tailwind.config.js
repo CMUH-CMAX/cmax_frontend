@@ -24,8 +24,8 @@ export default {
 				lg: '20px'
 			},
 			gradientColorStops: {
-				'main-light': '#388E8E',
-				'main-strong': '#1A5B5B'
+				'main-light': 'var(--blue-4)',
+				'main-strong': 'var(--blue-5)'
 			},
 			gridTemplateRows: {
 				'main-header-layout': '2fr 1fr'
@@ -37,15 +37,28 @@ export default {
 				'white-f': '#FFFFFF',
 				'notification-badge': 'rgb(234,179,8)',
 				warning: 'var(--notification-warning)',
-				info: 'var(--notification-info)'
+				info: 'var(--notification-info)',
+				'bulletin-info': 'var(--blue-4)',
+				'bulletin-warning': 'var(--red-4)',
+				bulletin: 'var(--gray-4)',
+				tap: 'var(--blue-1)',
+				checked: 'var(--blue-2)',
+				'75p-white': 'var(--white-75p)',
+				'50p-white': 'var(--white-50p)',
+				'25p-white': 'var(--white-25p)'
 			},
 			textColor: {
-				'blue-3': '#67BEBE',
-				'white-f': '#FFFFFF',
-				strong: '#1A5B5B'
+				'blue-3': 'var(--blue-3)',
+				'white-f': 'var(--white-f)',
+				strong: 'var(--blue-5)',
+				silent: 'var(--gray-4)',
+				main: 'var(--black-0)'
 			},
 			width: {
 				button: '10rem'
+			},
+			boxShadow: {
+				'card-shadow': '0px 2px 4px rgba(0, 0, 0, 0.05), 0px 4px 6px rgba(0, 0, 0, 0.1)'
 			}
 		}
 	},
