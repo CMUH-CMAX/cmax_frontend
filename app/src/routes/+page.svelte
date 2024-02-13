@@ -27,7 +27,7 @@
 			<NotificationBtn extraStyle="ml-auto"/>
 		</div>
 		<!-- turn it into Search Component -->
-		<SearchBar />
+		<SearchBar hint="症狀、醫院與醫生" jumpToSearch={true}/>
 	</header>
 	<main class="w-full">
 		<MainPageLogo />

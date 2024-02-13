@@ -1,9 +1,17 @@
 <script>
 	import { FaceSmile, Squares2x2, XMark } from 'svelte-heros-v2';
-	import NavigationBar from '../../components/NavigationMenu.svelte'
-	import HeaderSearch from '../../components/HeaderSearch.svelte'
+	import NavigationBar from '$components/Navigation.svelte';
+	import SearchBar from '$components/SearchBar.svelte';
+	import {flip} from 'svelte/animate'
 
 	let searchHistory = ['仁仁', '杏儒','行德', '許鴻安', '塵瞧舒', '王安石']
+
+	function remove_history(name) {
+		searchHistory = searchHistory.filter(n => n !== name);
+	}
+	function clear_history() {
+		searchHistory = [];
+	}
 </script>
 <svelte:head>
 	<title>Search</title>
@@ -14,8 +22,8 @@
 </style>
 <div class="relative w-screen flex flex-col min-h-screen">
 	
-	<HeaderSearch return_btn={false} search_hint="搜尋醫院與醫生"/>
-
+	<SearchBar return_btn={true} hint="搜尋醫院與醫生" divider={true} extraSpacing='mx-4 mt-6 mb-3'/>
+	<hr class="pb-2">
 	<div class="grid grid-cols-2 place-items-center">
 		<a href="/search/categorys">
 			<div class="py-8">
@@ -33,21 +41,19 @@
 
 	<hr class="p-2">
 
-	<div class="grid grid-cols px-4">
-		<div class="container grid grid-cols-2 pb-4">
+	<div class="grid px-4">
+		<div class="container flex justify-between pb-4">
 			<span class="text-start">最近搜尋</span>
-			<span class="text-end text-xs">全部清除</span>
+			<button class="w-fit active:border-none" on:click={clear_history}>全部清除</button>
 		</div>
 
-		{#each searchHistory as name}
-		<a href="/search/result?name={encodeURIComponent(name)}">
-			<div class="container grid grid-cols-2 pb-4">
-				<span class="text-start text-sm">{name}</span>
-				<div class="grid justify-end">
-					<XMark class="XMark" size="16" color="#BAB6B2"/>
-				</div>
-			</div>
-		</a>
+		{#each searchHistory as name (name)}
+		<div class="flex pb-4" animate:flip>
+			<a class="flex-1" href="/search/result?name={encodeURIComponent(name)}" >
+				<span class="text-start text-sm pb-4">{name}</span>
+			</a>
+			<XMark class="m-1" size="16" color="#BAB6B2" on:click={(e) => remove_history(name)}/>
+		</div>
 		{/each}
 	</div>
 
