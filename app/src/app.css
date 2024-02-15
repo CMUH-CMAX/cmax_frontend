@@ -1,48 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
-  --black-0: #000000;
-  --white-f: #FFFFFF;
-  --gray-1: #F8F8F8;
-  --gray-2: #DBD6D1;
-  --gray-3: #BAB6B2;
-  --gray-4: #8B8986;
-  --gray-5: #413F3E;
-  
-  --blue-1: #D7EEEE;
-  --blue-2: #9AD0D0;
-  --blue-3: #67BEBE;
-  --blue-4: #388E8E;
-  --blue-5: #1A5B5B;
+	--black-0: #000000;
+	--white-f: #ffffff;
+	--gray-1: #f8f8f8;
+	--gray-2: #dbd6d1;
+	--gray-3: #bab6b2;
+	--gray-4: #8b8986;
+	--gray-5: #413f3e;
 
-  --red-2: #F8C4C7;
-  --red-3: #F09EA3;
-  --red-4: #CE575E;
+	--blue-1: #d7eeee;
+	--blue-2: #9ad0d0;
+	--blue-3: #67bebe;
+	--blue-4: #388e8e;
+	--blue-5: #1a5b5b;
 
-  --gold-1: #F2D791;
-  --gold-2: #E7B22C;
+	--red-2: #f8c4c7;
+	--red-3: #f09ea3;
+	--red-4: #ce575e;
 
-  --radial-1: radial-gradient(50% 50% at 50% 50%, #388E8E 0%, #236A6A 99.99%, #1A5B5B 100%);
-	
+	--gold-1: #f2d791;
+	--gold-2: #e7b22c;
+
+	--radial-1: radial-gradient(50% 50% at 50% 50%, #388e8e 0%, #236a6a 99.99%, #1a5b5b 100%);
+
 	--linear-1: linear-gradient(225deg, var(--blue-4) 0%, var(--blue-5) 100%);
 	--linear-2: linear-gradient(142deg, var(--blue-2) 9.39%, var(--blue-3) 57.6%);
 	--linear-gold: linear-gradient(205.68deg, var(--gold-1) 2.38%, var(--gold-2) 95.92%);
-  /* I need a code for this linear gradient */
+	/* I need a code for this linear gradient */
 	--linear-x21: linear-gradient(180deg, var(--blue-4) 5.39%, var(--blue-5) 73.52%);
-  
-	--white-75p: #FFFFFFBF;
-	--white-50p: #FFFFFF80;
-	--white-25p: #FFFFFF40;
+
+	--white-75p: #ffffffbf;
+	--white-50p: #ffffff80;
+	--white-25p: #ffffff40;
 }
 
 * {
-  font-family: 'Noto Serif Display', serif;
+	font-family: 'Noto Sans TC';
 }
 
 .app {
-  /* outline: 1px solid black; */
+	width: 100vw;
+	/* outline: 1px solid black; */
 }

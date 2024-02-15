@@ -1,60 +1,38 @@
 <script>
-	import BellItem from '../components/BellItem.svelte';
-	import Navigation from '../components/NavigationMenu.svelte';
-	import ServiceProvide from '../components/ServiceProvide.svelte';
-	import WellDesignSearchBtn from '../components/WellDesignSearchBtn.svelte';
-	import SymptomsRanking from '../components/SymptomsRanking.svelte';
-
-	import Mascots from '../components/Mascots.svelte';
-
-	import mountainSvg from '$lib/assets/mountain.svg';
-	let lastname = '書僑';
+	import MainPageLogo from '$components/MainPageLogo.svelte';
+	import RecentSymptoms from '$components/RecentSymptoms.svelte';
+	import NotificationBtn from '$components/NotificationButton.svelte';
+	import ProvidedServices from '$components/ProvidedServices.svelte';
+	import Navigation from '$components/Navigation.svelte';
+	import SearchBar from '$components/SearchBar.svelte';
+	
 </script>
-<svelte:head>
-	<title>首頁</title>
-</svelte:head>
-<style>#home{background: url('/Stars.svg'), var(--linear-x21);}</style>
-<div id="home" class="relative w-screen flex flex-col min-h-screen">
-	<div class="w-full mx-auto grid grid-cols-4 gap-4 content-around p-5 z-10">
-		<div class="col-span-3 text-white">
-			<p class="text-xs">Hi，<span class="lastname font-semibold i18n">{lastname}</span>！</p>
-			<p class="text-base i18n">今天過得好嗎？</p>
-		</div>
-		<div class="flex justify-end">
-			<div class="notification">
-				<a href="/notification">
-					<BellItem />
-				</a>
-			</div>
-		</div>
-		<div class="col-span-4">
-			<a href="/search">
-				<WellDesignSearchBtn />
-			</a>
-		</div>
-	</div>
-	
-	<Mascots />
 
-	<div class="grid mx-5 z-10">
-		<div class="grid grid-cols-4 gap-4 pb-2 text-white text-base">
-			<p class="col-span-3 gap-4 pb-2">最近常見症狀</p>
-			<p class="text-end">
-				<a href="/recent">
-					查看更多
-				</a>
-			</p>
+<svelte:head>
+	<title>Home</title>
+	<meta name="description" content="CMAX Home Page"/>
+</svelte:head>
+
+<style>#home{background: url('/Stars.svg'), var(--linear-x21);}</style>
+
+<div id='home' class="bg-gradient-to-b from-main-light via-main-strong to-main-strong h-screen px-5">
+	<header class="w-full">
+		<div class="flex py-4">
+			<div class=" text-white-f text-lg">
+				<h2>Hi, 殊樵</h2>
+				<h2>今天過得好嗎？</h2>
+			</div>
+			<!-- bell item -->
+			
+			<NotificationBtn extraStyle="ml-auto"/>
 		</div>
-		<SymptomsRanking />
-	</div>
-	
-	<div class="service-slot mx-5 z-10">
-  	<span class="text-white drop-shadow-xl">服務</span>
-		<ServiceProvide />
-	</div>
-	<div class="p-5 gap"></div>
-	<img class="mountainSvg absolute w-screen inset-x-0 bottom-0" src={mountainSvg} alt="The mountain" disabled draggable="false"/>
-	<div class="mt-auto fixed inset-x-0 bottom-0 z-20">
-		<Navigation />
-	</div>
+		<!-- turn it into Search Component -->
+		<SearchBar />
+	</header>
+	<main class="w-full">
+		<MainPageLogo />
+		<RecentSymptoms />
+		<ProvidedServices />
+	</main>
+	<Navigation />
 </div>
