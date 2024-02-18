@@ -30,7 +30,7 @@
 </svelte:head>
 <div class="w-screen min-h-screen">
 	<SearchBar return_btn={true} hint="搜尋醫院與醫生" divider={true} />
-	<p class="ml-6 mt-6">症狀分類</p>
+	<p class="ml-6 my-3 font-bold">症狀分類</p>
 	<div
 		class="grid mx-6 grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 ld:grid-cols-5 xl:grid-cols-6"
 	>
