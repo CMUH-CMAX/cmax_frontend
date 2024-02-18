@@ -52,7 +52,9 @@ export default {
 				'white-f': 'var(--white-f)',
 				strong: 'var(--blue-5)',
 				silent: 'var(--gray-4)',
-				main: 'var(--black-0)'
+				main: 'var(--black-0)',
+				'navigation-inactive': 'var(--gray-3)',
+				'navigation-active': 'var(--blue-5)'
 			},
 			width: {
 				button: '10rem'
