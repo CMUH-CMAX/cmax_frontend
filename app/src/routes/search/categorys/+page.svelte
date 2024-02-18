@@ -29,7 +29,7 @@
 	<meta name="description" content="Notification" />
 </svelte:head>
 <div class="relative w-screen flex flex-col min-h-screen">
-	<SearchBar return_btn={true} hint="搜尋醫院與醫生" extraSpacing="mx-4 mt-6 mb-3" />
+	<SearchBar return_btn={true} hint="搜尋醫院與醫生" divider={true} />
 
 	<p class="ml-6 mt-6">症狀分類</p>
 	<div

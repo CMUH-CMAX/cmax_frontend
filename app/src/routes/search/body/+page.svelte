@@ -74,7 +74,7 @@
 	<meta name="description" content="Body search" />
 </svelte:head>
 <div class="relative w-screen flex flex-col min-h-screen">
-	<SearchBar return_btn={true} />
+	<SearchBar return_btn={true} divider={true} hint="搜尋醫院與醫生" />
 	<div class="grid grid-cols-5 gap-4 w-screen">
 		<div>
 			<div class="p-2">

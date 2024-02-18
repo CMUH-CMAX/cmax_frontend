@@ -18,9 +18,8 @@
 	<title>Search</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
-<div class="relative w-screen flex flex-col min-h-screen">
-	<SearchBar return_btn={true} hint="搜尋醫院與醫生" extraSpacing="mx-4 mt-6 mb-3" />
-	<hr class="pb-2" />
+<div class="w-screen min-h-screen">
+	<SearchBar return_btn={true} hint="搜尋醫院與醫生" divider={true} />
 	<div class="grid grid-cols-2 place-items-center">
 		<a href="/search/categorys">
 			<div class="py-8">
@@ -56,7 +55,7 @@
 
 	<hr class="p-2" />
 
-	<span class="w-full text-center text-xs">沒有更多搜尋結果了</span>
+	<p class="w-full mx-auto text-center text-xs">沒有更多搜尋結果了</p>
 
 	<div class="mt-auto">
 		<NavigationBar />
