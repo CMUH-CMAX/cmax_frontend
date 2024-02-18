@@ -28,36 +28,22 @@
 	<title>症狀分類 | CMAX</title>
 	<meta name="description" content="Notification" />
 </svelte:head>
-<div class="relative w-screen flex flex-col min-h-screen">
+<div class="w-screen min-h-screen">
 	<SearchBar return_btn={true} hint="搜尋醫院與醫生" divider={true} />
-
 	<p class="ml-6 mt-6">症狀分類</p>
 	<div
-		class="grid justify-items-center items-center mx-6
-						  xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 ld:grid-cols-5 xl:grid-cols-6"
+		class="grid mx-6 grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 ld:grid-cols-5 xl:grid-cols-6"
 	>
 		{#each symptom_list as symptom}
-			<div class="item w-full h-16 py-2 sm:odd:pr-2 sm:even:pl-2 md:odd:p-0 md:even:p-0">
-				<a href="/search/result">
-					<ItemBlock text={symptom['text']} img={symptom['link']} />
-				</a>
-			</div>
+			<a href="/search/result" class="h-16">
+				<ItemBlock text={symptom['text']} img={symptom['link']} />
+			</a>
 		{/each}
 	</div>
 </div>
 
 <style>
-	.app {
+	/* .app {
 		background: var(--gray-1);
-	}
-
-	/* .item:nth-child(3n-2){
-		@apply pr-2;
-	}
-	.item:nth-child(3n-3){
-		@apply pl-2;
-	}
-	.item:nth-child(3n-1){
-		@apply px-1;
 	} */
 </style>

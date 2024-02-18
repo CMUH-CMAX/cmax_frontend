@@ -43,6 +43,7 @@ export default {
 				bulletin: 'var(--gray-4)',
 				tap: 'var(--blue-1)',
 				checked: 'var(--blue-2)',
+				'img-alt': 'var(--gray-2)',
 				'75p-white': 'var(--white-75p)',
 				'50p-white': 'var(--white-50p)',
 				'25p-white': 'var(--white-25p)'
