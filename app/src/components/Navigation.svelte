@@ -15,7 +15,7 @@
 		<li class="h-10 my-2">
 			<Home
 				strokeWidth="2"
-				class={twMerge('text-navigation-inactive', {
+				class={twMerge('text-navigation-inactive focus:outline-none', {
 					'text-navigation-active': currentPath === homeUrl
 				})}
 				size="24"
@@ -34,7 +34,7 @@
 		<li class="h-10 my-2">
 			<MagnifyingGlass
 				strokeWidth="2"
-				class={twMerge('text-navigation-inactive', {
+				class={twMerge('text-navigation-inactive focus:outline-none', {
 					'text-navigation-active': currentPath === searchUrl
 				})}
 				size="24"
@@ -54,7 +54,7 @@
 			<User
 				size="24"
 				strokeWidth="2"
-				class={twMerge('text-navigation-inactive', {
+				class={twMerge('text-navigation-inactive focus:outline-none', {
 					'text-navigation-active': currentPath === personalInfoUrl
 				})}
 				on:click={() => {
