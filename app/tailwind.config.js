@@ -50,6 +50,7 @@ export default {
 			},
 			textColor: {
 				'blue-3': 'var(--blue-3)',
+				'blue-4': 'var(--blue-4)',
 				'white-f': 'var(--white-f)',
 				strong: 'var(--blue-5)',
 				silent: 'var(--gray-4)',
