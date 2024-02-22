@@ -14,7 +14,7 @@
 <div class="flex flex-col justify-center items-center duration-100 hover:scale-110 cursor-pointer">
 	<div
 		class={twMerge(
-			'w-[60px] h-[60px] flex justify-center items-center rounded-[50%] bg-white mb-2',
+			'w-[60px] h-[60px] flex justify-center items-center rounded-[50%] bg-white mb-2 active:scale-75 transition-transform duration-75 scale-100',
 			{
 				'bg-main-light': color === 'theme',
 				'bg-bulletin': color === 'gray',
