@@ -77,20 +77,24 @@
 	<SearchBar return_btn={true} divider={true} hint="搜尋醫院與醫生" />
 	<div class="grid grid-cols-5 gap-4 w-screen">
 		<div>
-			<div class="p-2">
-				<BubbleButton content="殊樵" hint="變更" />
+			<div class="mt-4">
+				<BubbleButton hint="變更" color="theme" size="md" hintColor="black">
+					<p slot="buttonText" class="text-white text-2xs">殊樵</p>
+				</BubbleButton>
 			</div>
-			<div class="p-2">
-				<BubbleButton content="男/女" hint="性別" color="gray" />
+			<div class="mt-4">
+				<BubbleButton hint="性別" color="gray" size="md" hintColor="black">
+					<p slot="buttonText" class="text-white text-2xs">男/女</p>
+				</BubbleButton>
 			</div>
 		</div>
 		<div class="human col-span-3 py-12 grid place-items-center">
 			<HumanBeing bind:body_selected bind:body_parts />
 			<div class="pt-24" />
 		</div>
-		<div />
 	</div>
 </div>
+
 {#if menu_hide == false || true}
 	<div class="process bottom-0 border-t">
 		<div

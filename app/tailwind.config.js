@@ -34,6 +34,9 @@ export default {
 				'main-header-layout': '4fr 4fr 1fr'
 			},
 			backgroundColor: {
+				'main-strong': 'var(--blue-5)',
+				'main-mild': 'var(--blue-4)',
+				'main-light': 'var(--blue-3)',
 				'white-f': '#FFFFFF',
 				'notification-badge': 'rgb(234,179,8)',
 				warning: 'var(--notification-warning)',
