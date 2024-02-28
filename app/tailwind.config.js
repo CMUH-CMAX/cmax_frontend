@@ -10,10 +10,39 @@ export default {
 				'moving-left-right': {
 					'0%': { transform: 'translateX(-105%)' },
 					'100%': { transform: 'translateX(105%)' }
+				},
+				'slide-up': {
+					'0%': {
+						transform: 'translateY(300px)',
+						opacity: '0'
+					},
+					'100%': {
+						opacity: '1'
+					}
+				},
+				'slide-down': {
+					'0%': {
+						opacity: '1',
+						transform: 'translateY(-300px)'
+					},
+					'100%': {
+						opacity: '0'
+					}
+				},
+				'fade-out': {
+					'0%': {
+						opacity: '1'
+					},
+					'100%': {
+						display: 'none'
+					}
 				}
 			},
 			animation: {
-				floating: 'moving-left-right 30s ease-in-out infinite'
+				floating: 'moving-left-right 30s ease-in-out infinite',
+				slideUp: 'slide-up 0.5s',
+				slideDown: 'slide-down 0.5s',
+				fadeOut: 'fadeOut 0.5s'
 			},
 			fontSize: {
 				'2.5xs': '9px',
@@ -33,10 +62,19 @@ export default {
 			gridTemplateColumns: {
 				'main-header-layout': '4fr 4fr 1fr'
 			},
+			borderColor: {
+				'main-strong': 'var(--blue-5)',
+				'main-mild': 'var(--blue-4)',
+				'main-light': 'var(--blue-3)',
+				'main-lighter': 'var(--blue-2)',
+				'main-lightest': 'var(--blue-1)'
+			},
 			backgroundColor: {
 				'main-strong': 'var(--blue-5)',
 				'main-mild': 'var(--blue-4)',
 				'main-light': 'var(--blue-3)',
+				'main-lighter': 'var(--blue-2)',
+				'main-lightest': 'var(--blue-1)',
 				'white-f': '#FFFFFF',
 				'notification-badge': 'rgb(234,179,8)',
 				warning: 'var(--notification-warning)',
@@ -69,5 +107,5 @@ export default {
 			}
 		}
 	},
-	plugins: []
+	plugins: [require('tailwindcss-animate')]
 };
