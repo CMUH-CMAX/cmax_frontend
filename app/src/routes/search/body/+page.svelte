@@ -1,5 +1,5 @@
 <script>
-	import { ChevronLeft, MagnifyingGlass } from 'svelte-heros-v2';
+	import { ChevronLeft } from 'svelte-heros-v2';
 	import SearchBar from '$components/SearchBar.svelte';
 	import HumanBeing, { focus_body } from '$components/HumanBeing.svelte';
 	import BubbleButton from '$components/gadgets/BubbleButton.svelte';
