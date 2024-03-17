@@ -1,4 +1,5 @@
 <script>
+	import { onMount } from 'svelte';
 	import BellItem from '../components/BellItem.svelte';
 	import Navigation from '../components/NavigationMenu.svelte';
 	import ServiceProvide from '../components/ServiceProvide.svelte';
@@ -8,7 +9,22 @@
 	import Mascots from '../components/Mascots.svelte';
 
 	import mountainSvg from '$lib/assets/mountain.svg';
-	let lastname = '書僑';
+	let lastname = "";
+    let symptoms = [];
+	onMount(async () => {
+		let info = await (await fetch("http://localhost:8000/api/user/profile", {
+			headers: {
+				"Authorization": "guest"
+			}
+		})).json()
+		console.log(info)
+		if(info['error']){
+			// redirect
+		}else{
+			lastname = info['username'];
+		}
+
+	})
 </script>
 <svelte:head>
 	<title>首頁</title>

@@ -1,68 +1,12 @@
 <script>
   import { ChevronLeft, Eye } from 'svelte-heros-v2';
 	import HeaderNavigator from '../../components/HeaderNavigator.svelte';
-  let recent_symptoms = [
-    {
-      name: '發燒',
-      academic: 'pyrexia',
-      visit: 3578
-    },
-    {
-      name: '紅疹',
-      academic: 'rash',
-      visit: 1324
-    },
-    {
-      name: '下腹疼痛',
-      academic: 'abdominal-pain',
-      visit: 1324
-    },
-    {
-      name: '頭暈',
-      academic: 'vertigo',
-      visit: 1324
-    },
-    {
-      name: '畏寒',
-      academic: 'rigor',
-      visit: 1324
-    },
-    {
-      name: '腹瀉',
-      academic: 'diarrhea',
-      visit: 1324
-    },
-    {
-      name: '皮膚過敏',
-      academic: 'allergic-dermatitis',
-      visit: 1324
-    },
-    {
-      name: '流鼻水',
-      academic: 'rhinorrhea',
-      visit: 1324
-    },
-    {
-      name: '打噴嚏',
-      academic: 'sneeze',
-      visit: 1324
-    },
-    {
-      name: '偏頭痛',
-      academic: 'migraine',
-      visit: 1324
-    },
-    {
-      name: '牙齦紅腫',
-      academic: 'gingivitis',
-      visit: 1324
-    },
-    {
-      name: '口臭',
-      academic: 'halitosis',
-      visit: 1324
-    },
-  ]
+
+	import { onMount } from 'svelte';
+  let recent_symptoms = []
+  onMount(async () => {
+    recent_symptoms = await (await fetch("http://localhost:8000/api/symptoms")).json();
+  })
 </script>
 <svelte:head>
   <meta name="theme-color" id="theme-color" content="#1A5B5B">

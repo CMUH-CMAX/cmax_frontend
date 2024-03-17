@@ -1,16 +1,22 @@
 <script>
-	import {Eye} from 'svelte-heros-v2';
+    import {Eye} from 'svelte-heros-v2';
+	import { onMount } from 'svelte';
 
+	onMount(async () => {
+		let symptoms_list = await (await fetch("http://localhost:8000/api/symptoms")).json();
+		symptomsRank[0] = symptoms_list[0]
+		symptomsRank[1] = symptoms_list[1]
+	})
 	let symptomsRank = [
 		{
 			name: '發燒',
 			academic: 'pyrexia',
-			view: 3578,
+			visit: 3578,
 		},
 		{
 			name: '紅疹',
 			academic: 'rash',
-			view: 1324
+			visit: 1324
 		}
 	];
 </script>
@@ -65,7 +71,7 @@
       <div class="visit-eye">
         <Eye variation="outline" size="14"/>
       </div>
-      <span>{symptomsRank[0]['view']}</span>
+      <span>{symptomsRank[0]['visit']}</span>
     </div>
   </div>
 
@@ -77,7 +83,7 @@
       <div class="visit-eye">
         <Eye variation="outline" size="14"/>
       </div>
-      <span>{symptomsRank[1]['view']}</span>
+      <span>{symptomsRank[1]['visit']}</span>
     </div>
   </div>
 
