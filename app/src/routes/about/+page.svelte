@@ -4,6 +4,16 @@
 	import HeaderNavigator from '../../components/HeaderNavigator.svelte';
 	let lastname = "殊樵";
 	let appointment = "無";
+    import { onMount } from "svelte";
+    onMount(async ()=>{
+        let info = await (await fetch("http://localhost:8000/api/user/profile", {
+            "headers": {
+                "Authorization": "guest",
+            }
+        })).json();
+        console.log(info)
+        lastname = info['username']
+    })
 </script>
 <svelte:head>
 	<title>About</title>
