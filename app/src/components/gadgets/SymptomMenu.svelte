@@ -1,13 +1,20 @@
+<script context="module" lang="ts">
+	import { writable, type Writable } from 'svelte/store';
+	export type SymptomData = {
+		part: string;
+		symptom: string;
+	};
+	let selected_symptoms = writable<SymptomData[]>([]);
+</script>
+
 <script>
+	import SymptomBlock from '$components/gadgets/SymptomBlock.svelte';
+	import { focus_body } from '$components/HumanBeing.svelte';
 	import { twMerge } from '$lib/helper';
 	import { ChevronLeft } from 'svelte-heros-v2';
-	import SymptomBlock, { selected_symptoms } from '$lib/symptom_selection/index.svelte';
-	import { focus_body } from '$components/HumanBeing.svelte';
+	import { setContext } from 'svelte';
 
-	export let menu_hide = true;
-	export let selected_body_part;
-	export let symptoms_selected_pass;
-	export let symptoms_selected_count;
+	setContext('selected_symptoms', selected_symptoms);
 	let symptomsList = {
 		head: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
 		chest: [4, 5, 6],
@@ -24,10 +31,10 @@
 		left_foot: [37, 38, 39],
 		right_foot: [39, 40, 41]
 	};
+	export let selected_body_part;
 	function cancelSelection() {
 		selected_body_part = undefined;
 		focus_body(undefined);
-		symptoms_selected = {};
 		// symptoms_selected_count = 0;
 	}
 	function whitespaceCancel() {
@@ -35,10 +42,13 @@
 			cancelSelection();
 		}
 	}
-	// console.log('Menu', selected_body_part);
-	$: {
-		menu_hide = selected_body_part === undefined;
-	}
+
+	export let menu_hide = true;
+	export let symptoms_selected_pass;
+	let selected_symptoms_count;
+
+	$: menu_hide = selected_body_part === undefined;
+	$: selected_symptoms_count = $selected_symptoms.length;
 </script>
 
 <div
@@ -57,15 +67,15 @@
 			<span>{selected_body_part === undefined ? '' : selected_body_part}</span>
 		</div>
 		{#if selected_body_part !== undefined}
-			<div class="overflow-auto h-[260px] z-0">
+			<div class="overflow-scroll h-[260px] z-0 flex flex-col">
 				{#each symptomsList[selected_body_part] as symptom}
-					<SymptomBlock {symptom} {selected_body_part} />
+					<SymptomBlock {symptom} {selected_body_part} extraStyle="shrink-0" />
 				{/each}
 			</div>
 		{/if}
 		<div class="next-process p-5 border-t">
 			<div class="grid grid-cols-2 mb-4">
-				<div class="symptoms-selection">已選症狀：{$selected_symptoms.length}/5</div>
+				<div class="symptoms-selection">已選症狀：{selected_symptoms_count}/5</div>
 				<div class="text-right text-xs">清空症狀</div>
 			</div>
 			<a href="/search/result">

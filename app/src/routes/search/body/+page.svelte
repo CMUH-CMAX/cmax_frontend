@@ -48,7 +48,7 @@
 			</div>
 		</div>
 		<div class="human col-span-3 py-12 grid place-items-center">
-			<HumanBeing bind:body_selected bind:body_parts />
+			<HumanBeing bind:body_selected />
 			<div class="pt-24" />
 		</div>
 	</div>
