@@ -53,8 +53,11 @@ export default {
 				lg: '20px'
 			},
 			gradientColorStops: {
-				'main-light': 'var(--blue-4)',
-				'main-strong': 'var(--blue-5)'
+				'main-strong': 'var(--blue-5)',
+				'main-mild': 'var(--blue-4)',
+				'main-light': 'var(--blue-3)',
+				'main-lighter': 'var(--blue-2)',
+				'main-lightest': 'var(--blue-1)'
 			},
 			gridTemplateRows: {
 				'main-header-layout': '2fr 1fr'

@@ -47,11 +47,12 @@
 		selected_symptoms.set([]);
 	}
 	export let menu_hide = true;
-	export let symptoms_selected_pass;
+	export let symptoms_selected_pass = false;
 	let selected_symptoms_count;
 
 	$: menu_hide = selected_body_part === undefined;
 	$: selected_symptoms_count = $selected_symptoms.length;
+	$: symptoms_selected_pass = $selected_symptoms.length > 0;
 </script>
 
 <div
@@ -78,12 +79,31 @@
 		{/if}
 		<div class="next-process p-5 border-t">
 			<div class="grid grid-cols-2 mb-4">
-				<div class="symptoms-selection">已選症狀：{selected_symptoms_count}/5</div>
+				<div class="symptoms-selection text-blue-4">
+					已選症狀：{selected_symptoms_count}/5
+				</div>
 				<button class="text-right text-xs" on:click={clearSelected}>清空症狀</button>
 			</div>
-			<a href="/search/result">
-				<div class="next-step-{symptoms_selected_pass} text-center p-2 rounded-lg">下一步</div>
-			</a>
+			{#if symptoms_selected_pass}
+				<a href="/search/result">
+					<div
+						class={twMerge('bg-neutral-300 text-white text-center p-2 rounded-lg', {
+							'bg-gradient-to-r from-main-lighter to-main-light': symptoms_selected_pass
+						})}
+					>
+						下一步
+					</div>
+				</a>
+			{/if}
+			{#if !symptoms_selected_pass}
+				<div
+					class={twMerge('bg-neutral-300 text-white text-center p-2 rounded-lg', {
+						'bg-gradient-to-r from-main-lighter to-main-light': symptoms_selected_pass
+					})}
+				>
+					下一步
+				</div>
+			{/if}
 		</div>
 	</div>
 </div>
