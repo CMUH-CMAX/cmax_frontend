@@ -43,6 +43,9 @@
 		}
 	}
 
+	function clearSelected() {
+		selected_symptoms.set([]);
+	}
 	export let menu_hide = true;
 	export let symptoms_selected_pass;
 	let selected_symptoms_count;
@@ -76,7 +79,7 @@
 		<div class="next-process p-5 border-t">
 			<div class="grid grid-cols-2 mb-4">
 				<div class="symptoms-selection">已選症狀：{selected_symptoms_count}/5</div>
-				<div class="text-right text-xs">清空症狀</div>
+				<button class="text-right text-xs" on:click={clearSelected}>清空症狀</button>
 			</div>
 			<a href="/search/result">
 				<div class="next-step-{symptoms_selected_pass} text-center p-2 rounded-lg">下一步</div>
