@@ -112,7 +112,8 @@ export default {
 				silent: 'var(--gray-4)',
 				main: 'var(--black-0)',
 				'navigation-inactive': 'var(--gray-3)',
-				'navigation-active': 'var(--blue-5)'
+				'navigation-active': 'var(--blue-5)',
+				'red-4': 'var(--red-4)'
 			},
 			width: {
 				button: '10rem'

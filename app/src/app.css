@@ -45,5 +45,6 @@
 
 .app {
 	width: 100vw;
+	height: 100vh;
 	/* outline: 1px solid black; */
 }
