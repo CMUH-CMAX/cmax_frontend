@@ -35,7 +35,7 @@
 	function cancelSelection() {
 		selected_body_part = undefined;
 		focus_body(undefined);
-		// symptoms_selected_count = 0;
+		clearSelected();
 	}
 	function whitespaceCancel() {
 		if (selected_body_part === undefined) {

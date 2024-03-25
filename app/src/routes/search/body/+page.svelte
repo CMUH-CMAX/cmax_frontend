@@ -55,8 +55,8 @@
 </div>
 
 <SymptomMenu
-	{menu_hide}
-	selected_body_part={body_selected}
+	bind:menu_hide
+	bind:selected_body_part={body_selected}
 	{symptoms_selected_count}
 	{symptoms_selected_pass}
 />
