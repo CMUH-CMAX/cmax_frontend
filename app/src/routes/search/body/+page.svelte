@@ -4,12 +4,9 @@
 	import BubbleButton from '$components/gadgets/BubbleButton.svelte';
 	import SymptomMenu from '$components/gadgets/SymptomMenu.svelte';
 
-	let body_selected, body_parts;
+	let body_selected;
 	let menu_hide = true;
 
-	let symptoms_selected = {};
-	let symptoms_selected_count = 0;
-	let symptoms_selected_pass = false;
 	function returnToDefault() {
 		body_selected = undefined;
 	}
@@ -21,10 +18,6 @@
 	// when currentBodyFocus change
 	$: {
 		menu_hide = body_selected === undefined;
-
-		// symptoms_selected
-		symptoms_selected_count = Object.keys(symptoms_selected).length;
-		symptoms_selected_pass = symptoms_selected_count > 0;
 	}
 </script>
 
@@ -54,12 +47,7 @@
 	</div>
 </div>
 
-<SymptomMenu
-	bind:menu_hide
-	bind:selected_body_part={body_selected}
-	{symptoms_selected_count}
-	{symptoms_selected_pass}
-/>
+<SymptomMenu bind:menu_hide bind:selected_body_part={body_selected} />
 
 <!-- symptom-select-{symptoms_selected[
 	encodeURIComponent(body_selected + symptom)
