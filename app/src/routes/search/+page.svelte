@@ -21,16 +21,16 @@
 <div class="w-screen min-h-screen">
 	<SearchBar return_btn={true} hint="搜尋醫院與醫生" divider={true} />
 	<div class="grid grid-cols-2 place-items-center">
-		<a href="/search/categorys">
-			<div class="py-8">
-				<Squares2x2 class="mx-auto mb-1/2" size="32" color="#9AD0D0" />
-				<span class="text-xs">依症狀分類搜尋</span>
-			</div>
-		</a>
 		<a href="/search/body">
 			<div class="py-8">
 				<FaceSmile class="mx-auto mb-1/2" size="32" color="#9AD0D0" />
 				<span class="text-xs">依身體部位搜尋</span>
+			</div>
+		</a>
+		<a href="/search/categorys">
+			<div class="py-8">
+				<Squares2x2 class="mx-auto mb-1/2" size="32" color="#9AD0D0" />
+				<span class="text-xs">依症狀分類搜尋</span>
 			</div>
 		</a>
 	</div>
