@@ -1,13 +1,11 @@
 <script lang="ts">
 	import { PlusCircle } from 'svelte-heros-v2';
-	import { twMerge } from '$lib/helper';
-	import { getContext, onMount } from 'svelte';
+	import { getContext } from 'svelte';
 	import type { Writable } from 'svelte/store';
 	import type { SymptomData } from './SymptomMenu.svelte';
 
 	export let symptom: string;
 	export let selected_body_part: string;
-	export let extraStyle = '';
 	let selected_symptoms = getContext<Writable<SymptomData[]>>('selected_symptoms');
 	let selected = false;
 	$: selected =
