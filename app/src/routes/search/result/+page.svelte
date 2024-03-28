@@ -2,31 +2,37 @@
 	import { Heart, ArrowUpRight, Phone } from 'svelte-heros-v2';
 	import SearchBar from '$components/SearchBar.svelte';
 	import { space } from 'postcss/lib/list';
+
+	import { onMount } from 'svelte';
 	export let result_length = 3;
 
-	let clinic_data = [
-		{
-			title: '行德中醫診所',
-			tags: ['家庭醫學', '婦科', '皮膚', '內分泌'],
-			address: '411台中市太平區昌東路36號',
-			tel: '04-2277-3786',
-			distance: 212
-		},
-		{
-			title: '愛仁中醫診所',
-			tags: ['家庭醫學', '婦科', '泌尿'],
-			address: '40869台中市南屯區寶山東二街27號',
-			tel: '04-23829338',
-			distance: 368
-		},
-		{
-			title: '端端中醫診所',
-			tags: ['婦科', '內分泌'],
-			address: '411台中市太平區宜昌東路36號',
-			tel: '04-2277-3786',
-			distance: 212
-		}
+	var clinic_data = [
+		// {
+		// 	name: '行德中醫診所',
+		// 	tags: ['家庭醫學', '婦科', '皮膚', '內分泌'],
+		// 	address: '411台中市太平區昌東路36號',
+		// 	tel: '04-2277-3786',
+		// 	distance: 212
+		// },
+		// {
+		// 	name: '愛仁中醫診所',
+		// 	tags: ['家庭醫學', '婦科', '泌尿'],
+		// 	address: '40869台中市南屯區寶山東二街27號',
+		// 	tel: '04-23829338',
+		// 	distance: 368
+		// },
+		// {
+		// 	name: '端端中醫診所',
+		// 	tags: ['婦科', '內分泌'],
+		// 	address: '411台中市太平區宜昌東路36號',
+		// 	tel: '04-2277-3786',
+		// 	distance: 212
+		// }
 	];
+
+	onMount(async () => {
+		clinic_data = await (await fetch("http://127.0.0.1:8000/api/clinics")).json();
+	})
 </script>
 
 <svelte:head>
@@ -36,7 +42,7 @@
 <div class="flex flex-col min-h-screen">
 	<SearchBar return_btn={true} hint="搜尋醫院與醫生" divider={true} />
 	<p class="text-xs h-auto my-3 ml-6">
-		{result_length} <span class="text-silent">筆搜尋資料</span>
+		{clinic_data.length} <span class="text-silent">筆搜尋資料</span>
 	</p>
 	<hr />
 	<main class="mx-6">
@@ -54,7 +60,7 @@
 				<p class="flex justify-between text-sm">
 					地址 : {data.address}
 					<span class="flex"
-						><span class="mr-2">{data.distance}m</span><ArrowUpRight
+						><span class="mr-2">{data.distance || 0}m</span><ArrowUpRight
 							class="bg-neutral-200 rounded-full p-2 focus:outline-none"
 							color="gray"
 							size="28"

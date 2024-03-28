@@ -9,7 +9,7 @@
 	export let divider = false;
 </script>
 
-<div class="sticky top-2">
+<div class="sticky top-0 py-2 bg-white">
 	<div class={twMerge('flex items-center justify-between mb-3 mx-4 mt-6 ', extraSpacing)}>
 		{#if return_btn}
 			<ChevronLeft class="mr-4 text-neutral-400 focus:outline-none" on:click={goBack} />
