@@ -13,6 +13,7 @@
 	import { twMerge } from '$lib/helper';
 	import { ChevronLeft } from 'svelte-heros-v2';
 	import { setContext } from 'svelte';
+	import Overlay from './Overlay.svelte';
 
 	setContext('selected_symptoms', selected_symptoms);
 	let symptomsList = {
@@ -31,7 +32,7 @@
 		left_foot: [37, 38, 39],
 		right_foot: [39, 40, 41]
 	};
-	export let selected_body_part;
+
 	function cancelSelection() {
 		selected_body_part = undefined;
 		focus_body(undefined);
@@ -43,9 +44,10 @@
 		}
 	}
 
-	function clearSelected() {
+	export function clearSelected() {
 		selected_symptoms.set([]);
 	}
+	export let selected_body_part;
 	export let menu_hide = true;
 	export let symptoms_selected_pass = false;
 	let selected_symptoms_count;
@@ -55,6 +57,7 @@
 	$: symptoms_selected_pass = $selected_symptoms.length > 0;
 </script>
 
+<Overlay showOverlay={!menu_hide} handleOverlayClick={cancelSelection} />
 <div
 	class={twMerge('fixed bg-white-f w-full bottom-0 border-t', {
 		'display-none': menu_hide
