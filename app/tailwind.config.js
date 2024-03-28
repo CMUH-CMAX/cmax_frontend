@@ -10,10 +10,39 @@ export default {
 				'moving-left-right': {
 					'0%': { transform: 'translateX(-105%)' },
 					'100%': { transform: 'translateX(105%)' }
+				},
+				'slide-up': {
+					'0%': {
+						transform: 'translateY(300px)',
+						opacity: '0'
+					},
+					'100%': {
+						opacity: '1'
+					}
+				},
+				'slide-down': {
+					'0%': {
+						opacity: '1',
+						transform: 'translateY(-300px)'
+					},
+					'100%': {
+						opacity: '0'
+					}
+				},
+				'fade-out': {
+					'0%': {
+						opacity: '1'
+					},
+					'100%': {
+						display: 'none'
+					}
 				}
 			},
 			animation: {
-				floating: 'moving-left-right 30s ease-in-out infinite'
+				floating: 'moving-left-right 30s ease-in-out infinite',
+				slideUp: 'slide-up 0.5s',
+				slideDown: 'slide-down 0.5s',
+				fadeOut: 'fadeOut 0.5s'
 			},
 			fontSize: {
 				'2.5xs': '9px',
@@ -24,8 +53,11 @@ export default {
 				lg: '20px'
 			},
 			gradientColorStops: {
-				'main-light': 'var(--blue-4)',
-				'main-strong': 'var(--blue-5)'
+				'main-strong': 'var(--blue-5)',
+				'main-mild': 'var(--blue-4)',
+				'main-light': 'var(--blue-3)',
+				'main-lighter': 'var(--blue-2)',
+				'main-lightest': 'var(--blue-1)'
 			},
 			gridTemplateRows: {
 				'main-header-layout': '2fr 1fr'
@@ -33,7 +65,19 @@ export default {
 			gridTemplateColumns: {
 				'main-header-layout': '4fr 4fr 1fr'
 			},
+			borderColor: {
+				'main-strong': 'var(--blue-5)',
+				'main-mild': 'var(--blue-4)',
+				'main-light': 'var(--blue-3)',
+				'main-lighter': 'var(--blue-2)',
+				'main-lightest': 'var(--blue-1)'
+			},
 			backgroundColor: {
+				'main-strong': 'var(--blue-5)',
+				'main-mild': 'var(--blue-4)',
+				'main-light': 'var(--blue-3)',
+				'main-lighter': 'var(--blue-2)',
+				'main-lightest': 'var(--blue-1)',
 				'white-f': '#FFFFFF',
 				'notification-badge': 'rgb(234,179,8)',
 				warning: 'var(--notification-warning)',
@@ -43,16 +87,20 @@ export default {
 				bulletin: 'var(--gray-4)',
 				tap: 'var(--blue-1)',
 				checked: 'var(--blue-2)',
+				'img-alt': 'var(--gray-2)',
 				'75p-white': 'var(--white-75p)',
 				'50p-white': 'var(--white-50p)',
 				'25p-white': 'var(--white-25p)'
 			},
 			textColor: {
 				'blue-3': 'var(--blue-3)',
+				'blue-4': 'var(--blue-4)',
 				'white-f': 'var(--white-f)',
 				strong: 'var(--blue-5)',
 				silent: 'var(--gray-4)',
-				main: 'var(--black-0)'
+				main: 'var(--black-0)',
+				'navigation-inactive': 'var(--gray-3)',
+				'navigation-active': 'var(--blue-5)'
 			},
 			width: {
 				button: '10rem'
@@ -62,5 +110,5 @@ export default {
 			}
 		}
 	},
-	plugins: []
+	plugins: [require('tailwindcss-animate')]
 };

@@ -19,8 +19,7 @@ const config = {
 			$components: 'src/components/',
 			$lib: 'src/lib'
 		}
-	},
-	preprocess: vitePreprocess()
+	}
 };
 
 export default config;
