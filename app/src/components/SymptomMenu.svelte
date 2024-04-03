@@ -14,6 +14,7 @@
 	import { ChevronLeft } from 'svelte-heros-v2';
 	import { setContext } from 'svelte';
 	import Overlay from './Overlay.svelte';
+	import SymptomSlider from './gadgets/SymptomSlider.svelte';
 
 	setContext('selected_symptoms', selected_symptoms);
 	let symptomsList = {
@@ -361,6 +362,9 @@
 				</div>
 				<button class="text-right text-xs" on:click={clearSelected}>清空症狀</button>
 			</div>
+			{#if symptoms_selected_pass}
+				<SymptomSlider extraStyle="mb-4" />
+			{/if}
 			{#if symptoms_selected_pass}
 				<a href="/search/result">
 					<div
