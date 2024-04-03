@@ -23,7 +23,6 @@
 			selected_symptoms.set($selected_symptoms);
 			return;
 		}
-		if ($selected_symptoms.length >= 5) return;
 
 		selected_symptoms.set([
 			...$selected_symptoms,

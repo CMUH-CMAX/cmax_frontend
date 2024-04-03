@@ -83,7 +83,7 @@
 		<div class="next-process p-5 border-t">
 			<div class="grid grid-cols-2 mb-4">
 				<div class="symptoms-selection text-blue-4">
-					已選症狀：{selected_symptoms_count}/5
+					已選症狀：{selected_symptoms_count}
 				</div>
 				<button class="text-right text-xs" on:click={clearSelected}>清空症狀</button>
 			</div>

@@ -90,10 +90,15 @@ export default {
 				'img-alt': 'var(--gray-2)',
 				'75p-white': 'var(--white-75p)',
 				'50p-white': 'var(--white-50p)',
-				'25p-white': 'var(--white-25p)'
+				'25p-white': 'var(--white-25p)',
+				'gray-1': 'var(--gray-1)',
+				'gray-2': 'var(--gray-2)',
+				'gray-3': 'var(--gray-3)',
+				'gray-4': 'var(--gray-4)',
+				'gray-5': 'var(--gray-5)'
 			},
 			textColor: {
-				'blue-3': 'var(--blue-3)',
+				'blue-5': 'var(--blue-3)',
 				'blue-4': 'var(--blue-4)',
 				'white-f': 'var(--white-f)',
 				strong: 'var(--blue-5)',
