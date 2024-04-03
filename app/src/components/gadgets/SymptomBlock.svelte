@@ -2,7 +2,7 @@
 	import { PlusCircle } from 'svelte-heros-v2';
 	import { getContext } from 'svelte';
 	import type { Writable } from 'svelte/store';
-	import type { SymptomData } from './SymptomMenu.svelte';
+	import type { SymptomData } from '../SymptomMenu.svelte';
 
 	export let symptom: string;
 	export let selected_body_part: string;
@@ -12,10 +12,11 @@
 		$selected_symptoms.find((symptomData) => symptomData.symptom == symptom) !== undefined;
 
 	function select_symptoms() {
-		if (
+		let foundSelected =
 			$selected_symptoms.find((symptomData) => symptomData.symptom === this.dataset.name) !==
-			undefined
-		) {
+			undefined;
+
+		if (foundSelected) {
 			let i = $selected_symptoms.findIndex(
 				(symptomData) => symptomData.symptom === this.dataset.name
 			);
