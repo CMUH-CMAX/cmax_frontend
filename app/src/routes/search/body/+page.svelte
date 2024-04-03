@@ -2,7 +2,7 @@
 	import SearchBar from '$components/SearchBar.svelte';
 	import HumanBeing from '$components/HumanBeing.svelte';
 	import BubbleButton from '$components/gadgets/BubbleButton.svelte';
-	import SymptomMenu from '$components/gadgets/SymptomMenu.svelte';
+	import SymptomMenu from '$components/SymptomMenu.svelte';
 
 	let body_selected;
 	let menu_hide = true;

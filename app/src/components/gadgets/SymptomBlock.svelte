@@ -31,7 +31,7 @@
 	}
 </script>
 
-<label class="group has-[:checked]:bg-main-lighter w-full bg-white h-[37px]">
+<label class="group has-[:checked]:bg-main-lighter w-full bg-white h-[37px] py-1">
 	<input
 		type="checkbox"
 		class="p-5 border-b text-base hidden"
