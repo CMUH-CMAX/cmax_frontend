@@ -21,24 +21,8 @@
 </script>
 
 <script>
-	// TODO: this might be a issues
-	export const body_parts = [
-		'empty',
-		'head',
-		'chest',
-		'stomach',
-		'left_arm',
-		'right_arm',
-		'symphysis',
-		'left_leg',
-		'right_leg',
-		'left_knee',
-		'right_knee',
-		'left_calves',
-		'right_calves',
-		'left_foot',
-		'right_foot'
-	];
+	import { body_parts, bodyPartChinese } from '$lib/constants';
+
 	export let body_selected = undefined;
 	let body_index = 0;
 	function select_body() {
@@ -48,7 +32,7 @@
 		focus_body(name);
 	}
 	// TODO: this might be a issues
-	$: body_selected = body_parts.indexOf(body_selected) > -1 ? body_selected : undefined;
+	$: body_selected = bodyPartChinese[body_selected] ? body_selected : undefined;
 </script>
 
 <svg
