@@ -70,7 +70,7 @@
 					/>
 				</p>
 			</div>
-			<hr class="w-screen" />
+			<hr class="w-full" />
 		{/each}
 	</main>
 </div>
