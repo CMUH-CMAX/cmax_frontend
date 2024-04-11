@@ -12,11 +12,10 @@
 	import SymptomBlock from '$components/gadgets/SymptomBlock.svelte';
 	import { focus_body } from '$components/HumanBeing.svelte';
 	import { twMerge } from '$lib/helper';
-	import { ChevronLeft } from 'svelte-heros-v2';
-	import { onMount, setContext } from 'svelte';
-	import Overlay from './Overlay.svelte';
 	import SymptomSlider from './gadgets/SymptomSlider.svelte';
 	import { bodyPartChinese, symptomDictionary, symptomsList } from '$lib/constants';
+
+	import { onMount, setContext } from 'svelte';
 	import { page } from '$app/stores';
 
 	setContext('selected_symptoms', selected_symptoms);
@@ -36,11 +35,11 @@
 		selected_symptoms.set([]);
 	}
 	export let selected_body_part = '';
-	export let menu_hide = true;
+	export let show_menu = true;
 	export let symptoms_selected_pass = false;
 	let selected_symptoms_count = 0;
 
-	$: menu_hide = selected_body_part === undefined;
+	$: show_menu = selected_body_part !== undefined;
 	$: selected_symptoms_count = $selected_symptoms.length;
 	$: symptoms_selected_pass = $selected_symptoms.length > 0;
 
@@ -56,10 +55,9 @@
 	});
 </script>
 
-<Overlay showOverlay={!menu_hide} handleOverlayClick={cancelSelection} />
 <SelectionList
 	{cancelSelection}
-	showList={menu_hide}
+	showList={show_menu}
 	title={selected_body_part ? bodyPartChinese[selected_body_part] : ''}
 >
 	{#if selected_body_part}
