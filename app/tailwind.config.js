@@ -97,6 +97,13 @@ export default {
 				'gray-4': 'var(--gray-4)',
 				'gray-5': 'var(--gray-5)'
 			},
+			outlineColor: {
+				'main-strong': 'var(--blue-5)',
+				'main-mild': 'var(--blue-4)',
+				'main-light': 'var(--blue-3)',
+				'main-lighter': 'var(--blue-2)',
+				'main-lightest': 'var(--blue-1)'
+			},
 			textColor: {
 				'blue-5': 'var(--blue-3)',
 				'blue-4': 'var(--blue-4)',
