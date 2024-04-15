@@ -18,7 +18,7 @@
 			visit: 1324
 		},
 		{
-			body_part: 'lower_adbomen',
+			body_part: 'lower_abdomen',
 			name: '下腹疼痛',
 			academic: 'abdominal-pain',
 			visit: 1324
