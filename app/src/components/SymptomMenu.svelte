@@ -53,6 +53,7 @@
 	}
 	onMount(() => {
 		const body_part = $page.url.searchParams.get('body_part') || '';
+		focus_body(body_part);
 		const recentSymptom = $page.url.searchParams.get('name') || '';
 		if (recentSymptom) {
 			selected_symptoms.set([...$selected_symptoms, { part: body_part, symptom: recentSymptom }]);
