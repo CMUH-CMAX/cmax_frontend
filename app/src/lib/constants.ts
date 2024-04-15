@@ -39,6 +39,7 @@ export const symptomDictionary = {
 
 export const symptomsList = {
 	head: [
+		'發燒',
 		'頭暈',
 		'頭痛',
 		'幻覺 (幻視、幻聽、幻觸等)',
