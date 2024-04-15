@@ -81,11 +81,11 @@
 	function generateSearchParams(symptomData) {
 		const redirectTarget = symptomData.body_part == '' ? '' : 'search/body';
 		const newParams = new URLSearchParams($page.url.searchParams);
-		const { body_part, academic } = symptomData;
+		const { body_part, name } = symptomData;
 		console.log(symptomData);
 		newParams.set('body_part', body_part);
-		newParams.set('name', academic);
-		goto(`${redirectTarget}?${newParams.toString()}`);
+		newParams.set('name', name);
+		goto(`${redirectTarget}?${decodeURIComponent(newParams.toString())}`);
 	}
 </script>
 
@@ -102,7 +102,7 @@
 				data-rank={i + 1}
 				on:click={generateSearchParams.bind(null, {
 					body_part: symptom.body_part,
-					academic: symptom.academic
+					name: symptom.name
 				})}
 			>
 				<div class="flex justify-start">

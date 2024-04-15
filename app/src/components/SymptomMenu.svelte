@@ -55,10 +55,9 @@
 		const body_part = $page.url.searchParams.get('body_part') || '';
 		const recentSymptom = $page.url.searchParams.get('name') || '';
 		if (recentSymptom) {
-			const symptomChinese = symptomDictionary[recentSymptom];
-			selected_symptoms.set([...$selected_symptoms, { part: body_part, symptom: symptomChinese }]);
-			console.log(document.getElementById(symptomChinese));
-			document.getElementById(symptomChinese)?.click();
+			selected_symptoms.set([...$selected_symptoms, { part: body_part, symptom: recentSymptom }]);
+			console.log(document.getElementById(recentSymptom));
+			document.getElementById(recentSymptom)?.click();
 		}
 	});
 </script>
