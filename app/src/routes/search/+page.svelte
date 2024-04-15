@@ -18,7 +18,7 @@
 	<title>Search</title>
 	<meta name="description" content="About this app" />
 </svelte:head>
-<div class="w-screen min-h-screen">
+<div class="w-full min-h-screen">
 	<SearchBar return_btn={true} hint="搜尋醫院與醫生" divider={true} />
 	<div class="grid grid-cols-2 place-items-center">
 		<a href="/search/body">

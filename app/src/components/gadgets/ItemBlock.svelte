@@ -1,9 +1,8 @@
 <script>
 	export let text = '範本';
 	export let img = '';
+	export let showWarning = false;
 </script>
-
-<!-- that not going to work!!! -->
 
 <div
 	class="drop-shadow-lg rounded-xl w-full h-full flex items-center mr-auto gap-2 bg-white hover:scale-105 active:scale-100 duration-75"

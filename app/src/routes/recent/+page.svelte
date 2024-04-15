@@ -1,68 +1,92 @@
 <script>
 	import { Eye } from 'svelte-heros-v2';
 	import HeaderNavigator from '$components/gadgets/HeaderNavigator.svelte';
+	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
+
 	let recent_symptoms = [
 		{
+			body_part: 'head',
 			name: '發燒',
 			academic: 'pyrexia',
 			visit: 3578
 		},
 		{
+			body_part: '',
 			name: '紅疹',
 			academic: 'rash',
 			visit: 1324
 		},
 		{
+			body_part: 'lower_adbomen',
 			name: '下腹疼痛',
 			academic: 'abdominal-pain',
 			visit: 1324
 		},
 		{
+			body_part: 'head',
 			name: '頭暈',
 			academic: 'vertigo',
 			visit: 1324
 		},
 		{
+			body_part: '',
 			name: '畏寒',
 			academic: 'rigor',
 			visit: 1324
 		},
 		{
+			body_part: 'lower_abdomen',
 			name: '腹瀉',
 			academic: 'diarrhea',
 			visit: 1324
 		},
 		{
+			body_part: '',
 			name: '皮膚過敏',
 			academic: 'allergic-dermatitis',
 			visit: 1324
 		},
 		{
+			body_part: 'head',
 			name: '流鼻水',
 			academic: 'rhinorrhea',
 			visit: 1324
 		},
 		{
+			body_part: 'head',
 			name: '打噴嚏',
 			academic: 'sneeze',
 			visit: 1324
 		},
 		{
+			body_part: 'head',
 			name: '偏頭痛',
 			academic: 'migraine',
 			visit: 1324
 		},
 		{
+			body_part: 'head',
 			name: '牙齦紅腫',
 			academic: 'gingivitis',
 			visit: 1324
 		},
 		{
+			body_part: 'head',
 			name: '口臭',
 			academic: 'halitosis',
 			visit: 1324
 		}
 	];
+	function generateSearchParams(symptomData) {
+		const redirectTarget = symptomData.body_part == '' ? '' : 'search/body';
+		const newParams = new URLSearchParams($page.url.searchParams);
+		const { body_part, academic } = symptomData;
+		console.log(symptomData);
+		newParams.set('body_part', body_part);
+		newParams.set('name', academic);
+		goto(`${redirectTarget}?${newParams.toString()}`);
+	}
 </script>
 
 <svelte:head>
@@ -76,6 +100,10 @@
 			<section
 				class="symptoms-card flex col-span rounded px-5 py-3.5 text-sm border shadow"
 				data-rank={i + 1}
+				on:click={generateSearchParams.bind(null, {
+					body_part: symptom.body_part,
+					academic: symptom.academic
+				})}
 			>
 				<div class="flex justify-start">
 					<span class="pr-1">

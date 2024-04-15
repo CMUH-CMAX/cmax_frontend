@@ -11,8 +11,9 @@ export const goBack = () => {
 
 export const handleOverlayAction = (node: HTMLElement) => {
 	const clickOutside = (event: Event) => {
+		event.stopPropagation();
 		if (node && !node.contains(this) && !event.defaultPrevented) {
-			node.dispatchEvent(new CustomEvent('overlayClick', node));
+			node.dispatchEvent(new Event('overlayClick'));
 		}
 	};
 

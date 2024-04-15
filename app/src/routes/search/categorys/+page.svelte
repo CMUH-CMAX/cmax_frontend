@@ -1,7 +1,7 @@
 <script>
 	import SearchBar from '$components/SearchBar.svelte';
 
-	import ItemBlock from '$components/ItemBlock.svelte';
+	import ItemBlock from '$components/gadgets/ItemBlock.svelte';
 
 	let symptom_list = [
 		{ text: '五官', link: '' },

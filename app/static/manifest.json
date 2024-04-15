@@ -1,0 +1,98 @@
+{
+	"name": "CMAX 中醫地圖 - Chinese Mapping App X (Canary)",
+	"short_name": "CMAX中醫地圖 - Canary",
+	"description": "連結民眾與中醫的專業分科平台",
+	"start_url": "/",
+	"lang": "zh-TW",
+	"display": "standalone",
+	"theme_color": "#388E8E",
+	"background_color": "#388E8E",
+	"orientation": "portrait",
+	"dir": "ltr",
+	"display_override": ["window-controls-overlay"],
+	"shortcuts": [
+		{
+			"name": "首頁",
+			"url": "/"
+		},
+		{
+			"name": "搜尋",
+			"url": "/search"
+		},
+		{
+			"name": "我的",
+			"url": "/profile"
+		}
+	],
+	"icons": [
+		{
+			"src": "CMAX_logo-16.png",
+			"sizes": "16x16",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "CMAX_logo-32.png",
+			"sizes": "32x32",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "CMAX_logo-64.png",
+			"sizes": "64x64",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "CMAX_logo-96.png",
+			"sizes": "96x96",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "CMAX_logo-128.png",
+			"sizes": "128x128",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "CMAX_logo-256.png",
+			"sizes": "256x256",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "CMAX_logo-512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "CMAX_logo.svg",
+			"type": "image/svg"
+		},
+		{
+			"src": "CMAX_logo-maskable-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "maskable"
+		}
+	],
+	"categories": ["health", "medical"],
+	"iarc_rating_id": "none",
+	"related_applications": [
+		{
+			"platform": "webapp",
+			"url": "https://laptop.0.z12.tw",
+			"id": "tw.z12.dev.cmax"
+		}
+	],
+	"prefer_related_applications": false,
+	"screenshots": [
+		{
+			"src": "iPhone_14__iPhone_13_Pro__iPhone_13__iPhone_12_Pro__iPhone_12_portrait.png",
+			"sizes": "1170x2532",
+			"type": "image/png"
+		}
+	]
+}

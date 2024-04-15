@@ -1,11 +1,12 @@
 <script context="module" lang="ts">
+	import SelectedSymtomPicker from './SelectedSymtomPicker.svelte';
 	import SelectionList from './layouts/SelectionList.svelte';
 	import { writable } from 'svelte/store';
 	export type SymptomData = {
 		part: string;
 		symptom: string;
 	};
-	let selected_symptoms = writable<SymptomData[]>([]);
+	export const selected_symptoms = writable<SymptomData[]>([]);
 </script>
 
 <script>
@@ -38,11 +39,18 @@
 	export let show_menu = true;
 	export let symptoms_selected_pass = false;
 	let selected_symptoms_count = 0;
+	let nextStep = false;
 
 	$: show_menu = selected_body_part !== undefined;
 	$: selected_symptoms_count = $selected_symptoms.length;
 	$: symptoms_selected_pass = $selected_symptoms.length > 0;
 
+	function showNextStep() {
+		nextStep = true;
+	}
+	function backToLastStep() {
+		nextStep = false;
+	}
 	onMount(() => {
 		const body_part = $page.url.searchParams.get('body_part') || '';
 		const recentSymptom = $page.url.searchParams.get('name') || '';
@@ -83,7 +91,7 @@
 			<SymptomSlider extraStyle="mb-4" />
 		{/if}
 		{#if symptoms_selected_pass}
-			<a href="/search/result">
+			<button on:click={showNextStep} class="w-full">
 				<div
 					class={twMerge('bg-neutral-300 text-white text-center p-2 rounded-lg', {
 						'bg-gradient-to-r from-main-lighter to-main-light': symptoms_selected_pass
@@ -91,7 +99,7 @@
 				>
 					下一步
 				</div>
-			</a>
+			</button>
 		{/if}
 		{#if !symptoms_selected_pass}
 			<div
@@ -103,4 +111,11 @@
 			</div>
 		{/if}
 	</div>
+	{#if nextStep}
+		<SelectedSymtomPicker
+			cancelSelection={backToLastStep}
+			title="其他基本資料"
+			showList={nextStep}
+		/>
+	{/if}
 </SelectionList>

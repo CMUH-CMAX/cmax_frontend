@@ -2,31 +2,19 @@
 	import { Heart, ArrowUpRight, Phone } from 'svelte-heros-v2';
 	import SearchBar from '$components/SearchBar.svelte';
 	import { space } from 'postcss/lib/list';
-	export let result_length = 3;
+	export let result_length = 0;
 
 	let clinic_data = [
 		{
-			title: '行德中醫診所',
+			title: '醫林勤美診所',
 			tags: ['家庭醫學', '婦科', '皮膚', '內分泌'],
 			address: '411台中市太平區昌東路36號',
 			tel: '04-2277-3786',
 			distance: 212
-		},
-		{
-			title: '愛仁中醫診所',
-			tags: ['家庭醫學', '婦科', '泌尿'],
-			address: '40869台中市南屯區寶山東二街27號',
-			tel: '04-23829338',
-			distance: 368
-		},
-		{
-			title: '端端中醫診所',
-			tags: ['婦科', '內分泌'],
-			address: '411台中市太平區宜昌東路36號',
-			tel: '04-2277-3786',
-			distance: 212
 		}
 	];
+
+	$: result_length = clinic_data.length;
 </script>
 
 <svelte:head>

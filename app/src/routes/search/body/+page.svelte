@@ -3,9 +3,11 @@
 	import HumanBeing from '$components/HumanBeing.svelte';
 	import BubbleButton from '$components/gadgets/BubbleButton.svelte';
 	import SymptomMenu from '$components/SymptomMenu.svelte';
+	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
 	let body_selected;
-	let menu_hide = true;
+	let show_menu = false;
 
 	function returnToDefault() {
 		body_selected = undefined;
@@ -17,8 +19,12 @@
 
 	// when currentBodyFocus change
 	$: {
-		menu_hide = body_selected === undefined;
+		show_menu = body_selected !== undefined;
 	}
+	$: console.log('已選擇', body_selected);
+	onMount(() => {
+		body_selected = $page.url.searchParams.get('body_part') || undefined;
+	});
 </script>
 
 <svelte:head>
@@ -47,7 +53,7 @@
 	</div>
 </div>
 
-<SymptomMenu bind:menu_hide bind:selected_body_part={body_selected} />
+<SymptomMenu bind:show_menu bind:selected_body_part={body_selected} />
 
 <!-- symptom-select-{symptoms_selected[
 	encodeURIComponent(body_selected + symptom)

@@ -33,6 +33,10 @@ export const bodyPartChinese = {
 	right_foot: '右腳'
 };
 
+export const symptomDictionary = {
+	vertigo: '頭暈'
+};
+
 export const symptomsList = {
 	head: [
 		'頭暈',

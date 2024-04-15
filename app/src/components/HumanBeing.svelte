@@ -21,9 +21,9 @@
 </script>
 
 <script>
-	import { body_parts, bodyPartChinese } from '$lib/constants';
+	import { body_parts } from '$lib/constants';
 
-	export let body_selected = undefined;
+	export let body_selected;
 	let body_index = 0;
 	function select_body() {
 		let name = this.attributes.name.value;
@@ -31,8 +31,6 @@
 		body_selected = name;
 		focus_body(name);
 	}
-	// TODO: this might be a issues
-	$: body_selected = bodyPartChinese[body_selected] ? body_selected : undefined;
 </script>
 
 <svg
