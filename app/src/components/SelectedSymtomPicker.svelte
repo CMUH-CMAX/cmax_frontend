@@ -16,7 +16,7 @@
 
 <SelectionList {cancelSelection} {title} {showList}>
 	<p class=" text-blue-4 ml-8 my-2">最困擾/最想解決的症狀</p>
-	<div class="overflow-scroll h-[260px] z-0 flex flex-col">
+	<div class="overflow-scroll scroll-smooth h-[260px] z-0 flex flex-col">
 		{#each $selected_symptoms as symptomData}
 			<SelectedSymptomBlock bind:urgentSymptom symptom={symptomData.symptom} />
 		{/each}
@@ -24,6 +24,7 @@
 	{#if symptoms_selected_pass}
 		<a href="/search/result">
 			<div
+				id="final-next-step"
 				class={twMerge('bg-neutral-300 text-white text-center p-2 rounded-lg', {
 					'bg-gradient-to-r from-main-lighter to-main-light': symptoms_selected_pass
 				})}

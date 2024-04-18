@@ -69,7 +69,7 @@
 	title={selected_body_part ? bodyPartChinese[selected_body_part] : ''}
 >
 	{#if selected_body_part}
-		<div class="overflow-scroll h-[260px] z-0 flex flex-col">
+		<div class="overflow-scroll scroll-smooth h-[260px] z-0 flex flex-col">
 			{#each symptomsList[selected_body_part] as symptom}
 				<SymptomBlock
 					{symptom}
@@ -91,7 +91,7 @@
 			<SymptomSlider extraStyle="mb-4" />
 		{/if}
 		{#if symptoms_selected_pass}
-			<button on:click={showNextStep} class="w-full">
+			<button id="next-step" on:click={showNextStep} class="w-full">
 				<div
 					class={twMerge('bg-neutral-300 text-white text-center p-2 rounded-lg', {
 						'bg-gradient-to-r from-main-lighter to-main-light': symptoms_selected_pass
