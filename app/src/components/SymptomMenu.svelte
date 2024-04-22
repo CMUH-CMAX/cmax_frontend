@@ -14,7 +14,7 @@
 	import { focus_body } from '$components/HumanBeing.svelte';
 	import { twMerge } from '$lib/helper';
 	import SymptomSlider from './gadgets/SymptomSlider.svelte';
-	import { bodyPartChinese, symptomDictionary, symptomsList } from '$lib/constants';
+	import { bodyPartChinese, symptomsList } from '$lib/constants';
 
 	import { onMount, setContext } from 'svelte';
 	import { page } from '$app/stores';

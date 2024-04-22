@@ -13,7 +13,7 @@
 		type="checkbox"
 		class="p-5 border-b text-base contents"
 		on:click={(e) => {
-			urgentSymptom = e.target.value;
+			urgentSymptom = e.currentTarget.value;
 		}}
 		value={symptom}
 		bind:checked={selected}
