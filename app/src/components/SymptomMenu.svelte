@@ -57,7 +57,10 @@
 		const recentSymptom = $page.url.searchParams.get('name') || '';
 		if (recentSymptom) {
 			selected_symptoms.set([...$selected_symptoms, { part: body_part, symptom: recentSymptom }]);
+			console.log('getelement');
 			console.log(document.getElementById(recentSymptom));
+			console.log('queryselector');
+			console.log(document.querySelector(`#${recentSymptom}`));
 			document.getElementById(recentSymptom)?.click();
 		}
 	});
